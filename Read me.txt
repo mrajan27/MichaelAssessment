@@ -1,0 +1,61 @@
+Part1:UI Automation
+------------------
+Description: https://coinmarketcap.com, UI validattion for sorted for 20 recored and fetching the data before and after Filtering.
+Package name :CoinMarketCap
+Class name:UIAssessment
+Using Methods :click,pause,presenceOfElement,enterTxt and scroll.
+Download jar : selenium-server-4.7.2.jar
+
+Run Mode: Right-click on UIAssessment(java class)
+	  Run As > Java Application
+
+Actual Result:
+
+Print all page Content: {Dogecoin
+DOGE=[8, $0.07401], Solana
+SOL=[16, $12.27], Bitcoin
+BTC=[1, $16,802.51], Polygon
+MATIC=[10, $0.7965], Ethereum
+ETH=[2, $1,210.42], Binance USD
+BUSD=[6, $1.00], Litecoin
+LTC=[14, $64.67], TRON
+TRX=[13, $0.05439], Wrapped Bitcoin
+WBTC=[20, $16,763.55], Polkadot
+DOT=[12, $4.59], UNUS SED LEO
+LEO=[19, $3.72], Tether
+USDT=[3, $1.00], Dai
+DAI=[11, $0.9998], Cardano
+ADA=[9, $0.2578], USD Coin
+USDC=[4, $1.00], Shiba Inu
+SHIB=[15, $0.000008356], Uniswap
+UNI=[17, $5.32], XRP
+XRP=[7, $0.3445], BNB
+BNB=[5, $249.19], Avalanche
+AVAX=[18, $11.89]}
+
+Print Filtered value Contents:{Monero
+XMR=[1, $145.53], Bitcoin Cash
+BCH=[2, $100.25]}
+
+
+
+Part2:API Automation
+-------------------
+Description: https://coinmarketcap.com, through API the convert "10000000" Guatemalan Quetzal(GTQ) to British pounds(GBP)
+		and GBP to doge coin.
+Package name :CoinMarketCap
+Class name: APIPoc
+Using End URLs:("https://pro-api.coinmarketcap.com/v2/tools/price-conversion?amount=10000000&symbol=GTQ&convert=GBP")
+		("https://pro-api.coinmarketcap.com/v2/tools/price-conversion?amount="+gbpPrice+"&symbol=GBP&convert=DOGE");
+
+Run Mode: Right-click on APIPoc(java class)
+	  Run As > Java Application
+Download jar : https://repo1.maven.org/maven2/org/json/json/20210307/ json-20210307.jar
+
+Actual Result:
+GET Response Code :: 200
+{"status":{"timestamp":"2022-12-20T15:03:35.080Z","error_code":0,"error_message":null,"elapsed":25,"credit_count":1,"notice":null},"data":[{"id":3541,"symbol":"GTQ","name":"Guatemalan Quetzal","amount":10000000,"last_updated":"2022-12-20T15:03:25.000Z","quote":{"GBP":{"price":1045685.9918112967,"last_updated":"2022-12-20T15:03:25.000Z"}}}]}
+GBP Price : 1045685.9918112967
+GET Response Code :: 200
+{"status":{"timestamp":"2022-12-20T15:03:35.986Z","error_code":0,"error_message":null,"elapsed":61,"credit_count":1,"notice":null},"data":[{"id":2791,"symbol":"GBP","name":"Pound Sterling","amount":1045685.9918112967,"last_updated":"2022-12-20T15:03:25.000Z","quote":{"DOGE":{"price":17095195.227522314,"last_updated":"2022-12-20T15:03:00.000Z"}}},{"id":6897,"symbol":"GBP","name":"Good Boy Points","amount":1045685.9918112967,"quote":{"DOGE":{"price":null,"last_updated":"2022-12-20T15:03:00.000Z"}}}]}
+DOGE Coin Price :17095195.227522314
